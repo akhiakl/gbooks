@@ -1,0 +1,504 @@
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/YtPCiw87EmE
+-->
+
+<div class="flex h-screen w-full flex-col">
+    <header class="bg-gray-900 flex h-16 items-center justify-between px-4 md:px-6 shadow dark:bg-gray-900">
+        <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="h-6 w-6 text-primary">
+                <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+            </svg>
+            <span class="sr-only">Google Books</span>
+        </a>
+        <div class="flex items-center gap-4">
+            <div class="relative w-full max-w-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                </svg>
+                <input
+                    class="flex h-10 px-3 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full rounded-md border border-gray-700 bg-gray-800 py-3 pl-10 pr-4 text-sm focus:border-primary focus:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:focus:border-primary dark:focus:bg-gray-900 dark:focus:ring-offset-gray-900"
+                    placeholder="Search Google Books..." type="search" />
+            </div>
+            <button
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full"
+                type="button" id="radix-:r2:" aria-haspopup="menu" aria-expanded="false" data-state="closed">
+                <span class="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
+                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="h-5 w-5">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </span>
+                </span>
+            </button>
+        </div>
+    </header>
+    <main class="flex-1 overflow-y-auto bg-gray-900">
+        <div class="container mx-auto py-12 px-4 md:px-6 lg:py-24">
+            <section class="flex flex-col items-center justify-center space-y-6 md:space-y-12">
+                <div class="space-y-4 text-center">
+                    <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+                        Explore the World of Books
+                    </h1>
+                    <p class="max-w-3xl text-lg text-gray-400 md:text-xl">
+                        Discover millions of books, from classic novels to the latest bestsellers.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div
+                        class="bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="flex flex-col items-center justify-between">
+                            <div class="w-full">
+                                <img alt="The Great Gatsby" class="rounded-lg object-cover w-full" height="300"
+                                    src="/placeholder.svg" width="225"
+                                    style="aspect-ratio: 225 / 300; object-fit: cover;" />
+                                <div class="mt-4">
+                                    <h3 class="text-lg font-semibold text-white">The Great Gatsby</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                                        <div class="flex items-center gap-0.5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-muted stroke-muted-foreground">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-muted stroke-muted-foreground">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                        </div>
+                                        <span>(4.2)</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm line-clamp-3">
+                                        F. Scott Fitzgerald's classic novel about the decadence and excess of the
+                                        Roaring Twenties in
+                                        America.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end gap-2 mt-4">
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Book
+                                </button>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="h-4 w-4">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5v14"></path>
+                                    </svg>
+                                    Add to Shelf
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="flex flex-col items-center justify-between">
+                            <div class="w-full">
+                                <img alt="To Kill a Mockingbird" class="rounded-lg object-cover w-full" height="300"
+                                    src="/placeholder.svg" width="225"
+                                    style="aspect-ratio: 225 / 300; object-fit: cover;" />
+                                <div class="mt-4">
+                                    <h3 class="text-lg font-semibold text-white">To Kill a Mockingbird</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                                        <div class="flex items-center gap-0.5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-muted stroke-muted-foreground">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                        </div>
+                                        <span>(4.7)</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm line-clamp-3">
+                                        Harper Lee's Pulitzer Prize-winning novel about racial injustice and the loss of
+                                        innocence in
+                                        the American South.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end gap-2 mt-4">
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Book
+                                </button>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="h-4 w-4">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5v14"></path>
+                                    </svg>
+                                    Add to Shelf
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="flex flex-col items-center justify-between">
+                            <div class="w-full">
+                                <img alt="1984" class="rounded-lg object-cover w-full" height="300"
+                                    src="/placeholder.svg" width="225"
+                                    style="aspect-ratio: 225 / 300; object-fit: cover;" />
+                                <div class="mt-4">
+                                    <h3 class="text-lg font-semibold text-white">1984</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                                        <div class="flex items-center gap-0.5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-muted stroke-muted-foreground">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-muted stroke-muted-foreground">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                        </div>
+                                        <span>(4.1)</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm line-clamp-3">
+                                        George Orwell's dystopian masterpiece about a totalitarian society and the power
+                                        of language to
+                                        control thought.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end gap-2 mt-4">
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Book
+                                </button>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="h-4 w-4">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5v14"></path>
+                                    </svg>
+                                    Add to Shelf
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="flex flex-col items-center justify-between">
+                            <div class="w-full">
+                                <img alt="Pride and Prejudice" class="rounded-lg object-cover w-full" height="300"
+                                    src="/placeholder.svg" width="225"
+                                    style="aspect-ratio: 225 / 300; object-fit: cover;" />
+                                <div class="mt-4">
+                                    <h3 class="text-lg font-semibold text-white">Pride and Prejudice</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                                        <div class="flex items-center gap-0.5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-muted stroke-muted-foreground">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                        </div>
+                                        <span>(4.8)</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm line-clamp-3">
+                                        Jane Austen's classic novel about love, marriage, and the complexities of social
+                                        class in
+                                        19th-century England.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end gap-2 mt-4">
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Book
+                                </button>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="h-4 w-4">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5v14"></path>
+                                    </svg>
+                                    Add to Shelf
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="flex flex-col items-center justify-between">
+                            <div class="w-full">
+                                <img alt="The Catcher in the Rye" class="rounded-lg object-cover w-full" height="300"
+                                    src="/placeholder.svg" width="225"
+                                    style="aspect-ratio: 225 / 300; object-fit: cover;" />
+                                <div class="mt-4">
+                                    <h3 class="text-lg font-semibold text-white">The Catcher in the Rye</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                                        <div class="flex items-center gap-0.5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-muted stroke-muted-foreground">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-muted stroke-muted-foreground">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                        </div>
+                                        <span>(4.1)</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm line-clamp-3">
+                                        J.D. Salinger's iconic novel about a disillusioned teenager's journey of
+                                        self-discovery in 1950s
+                                        New York City.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end gap-2 mt-4">
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    View Book
+                                </button>
+                                <button
+                                    class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="h-4 w-4">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5v14"></path>
+                                    </svg>
+                                    Add to Shelf
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="flex flex-col items-center justify-between">
+                            <div class="w-full">
+                                <img alt="The Lord of the Rings" class="rounded-lg object-cover w-full" height="300"
+                                    src="/placeholder.svg" width="225"
+                                    style="aspect-ratio: 225 / 300; object-fit: cover;" />
+                                <div class="mt-4">
+                                    <h3 class="text-lg font-semibold text-white">The Lord of the Rings</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-400">
+                                        <div class="flex items-center gap-0.5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 fill-primary">
+                                                <polygon
+                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                                </polygon>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>

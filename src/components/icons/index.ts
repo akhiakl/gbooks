@@ -1,0 +1,6 @@
+export { default as MountainIcon } from './MountainIcon'
+export { default as UserIcon } from './UserIcon'
+export { default as SearchIcon } from './SearchIcon'
+export { default as StarIcon } from './StarIcon'
+export { default as SunIcon } from './SunIcon'
+export { default as MoonIcon } from './MoonIcon'

@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "~/components/Navbar";
+import clsx from "clsx";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter =
+  Inter({
+    subsets: ['latin'],
+    display: 'swap',
+  })
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <link rel="preconnect" href="google.com" />
+      <body className={clsx(inter.className, 'bg-white dark:bg-gray-800')}>
+        <Navbar />
+        <main key="1" className="flex h-screen w-full flex-col p-4 md:p-6">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

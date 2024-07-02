@@ -1,0 +1,654 @@
+Delivered-To: akhilthedevz@gmail.com
+Received: by 2002:a05:6000:c92:b0:363:90aa:71e8 with SMTP id dp18csp247964wrb;
+        Fri, 28 Jun 2024 08:47:23 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGWtZrbdjjEHTyM0mIzmrcu57ckAngeDhtG9UvmjTeQZGALfrFRDLjVdG58F/ILRgVXIluG
+X-Received: by 2002:a05:620a:40c5:b0:79d:460e:dde6 with SMTP id af79cd13be357-79d460ee2fcmr958462685a.54.1719589642595;
+        Fri, 28 Jun 2024 08:47:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1719589642; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xknE8IVtCJCxVYW/dOMHTNePktT8mAjgdk/eKEyqIFeoKWuEC/s4MSegKPFQF51y11
+         JUuLILfUMwJTiIQXv5wkASA/udMNuDp68cZkeb/qak+huo3FS4Mgg6GknCTOGHmWYigp
+         oczA0/F/FP1DzHOuFSVh5fePaYFx2c2pfvMPlZJg06h88JGtbg5zk2ynsczi/78/5oju
+         xHqn1juCEoifMX36AENyo19VBvmc2YxR/FWY8TaycvJneZPScxv2Q9ksbLkceK/ItQdk
+         yRaHagY6EpropjNt/Fx9/eMLbg4iCtOIy1pVZAW/eauXyu7uT1Gv8XMaRYPVFh5Bwpah
+         TF8g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:mime-version:subject:message-id:to:reply-to:from:date
+         :dkim-signature:dkim-signature;
+        bh=IGFaMbdQTG4vq3Ui83UJ5W9yDVyo4l2Wd7mIzK0IyYc=;
+        fh=AiN9PCfK+uoyYYi0T0IYAhBUMD/j+vtJDnA1V6ozSh0=;
+        b=kU4Ct1z69pr9pKL/cY+FRws625WLowjz80SGedNh6fXKE7ArtT7/oAGCuLnsyzGPRO
+         Tsn/30mz4NcxQPkNx2IrgajJHPzShp/HNuwYMkV0lK9AjDJ6Q4PsbwzgCfrru9kolI2t
+         DyT367jffMkF5JWlL3/fMptFmMjlihEATcfycnVwtvEeMmCJ9R5IkBtn9Z4pcTCEzilr
+         ch2uXIjBE+7qx0ttgL7hOZ2/8wLTKV9AoAkuL92n3HaEEcnW2rhH0JPoYJZMHgTxUd7D
+         e8LL5GTc0AhVj23Qe91fAmEZZfyvB7hoEtzzozqzFaEUB+amjeJOHrVhNOKiWm//6gSo
+         AFFg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@swiggy.in header.s=iau4dafls5z34yep2oojmwqw5z74ov2x header.b=ZQt10jrs;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=XDyUywwP;
+       spf=pass (google.com: domain of 010001905f879fac-d4b62978-2846-4bcb-97b4-7ac5caa14812-000000@amazonses.com designates 54.240.10.27 as permitted sender) smtp.mailfrom=010001905f879fac-d4b62978-2846-4bcb-97b4-7ac5caa14812-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=swiggy.in
+Return-Path: <010001905f879fac-d4b62978-2846-4bcb-97b4-7ac5caa14812-000000@amazonses.com>
+Received: from a10-27.smtp-out.amazonses.com (a10-27.smtp-out.amazonses.com. [54.240.10.27])
+        by mx.google.com with ESMTPS id af79cd13be357-79d692f1ccbsi200326685a.225.2024.06.28.08.47.22
+        for <akhilthedevz@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 28 Jun 2024 08:47:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001905f879fac-d4b62978-2846-4bcb-97b4-7ac5caa14812-000000@amazonses.com designates 54.240.10.27 as permitted sender) client-ip=54.240.10.27;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@swiggy.in header.s=iau4dafls5z34yep2oojmwqw5z74ov2x header.b=ZQt10jrs;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=XDyUywwP;
+       spf=pass (google.com: domain of 010001905f879fac-d4b62978-2846-4bcb-97b4-7ac5caa14812-000000@amazonses.com designates 54.240.10.27 as permitted sender) smtp.mailfrom=010001905f879fac-d4b62978-2846-4bcb-97b4-7ac5caa14812-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=swiggy.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=iau4dafls5z34yep2oojmwqw5z74ov2x; d=swiggy.in; t=1719589642;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=cYJkCrmdXsxK1RjHqRYq2dkKiML8wG1A4sby2kzEf1A=;
+	b=ZQt10jrsuKN/JRb6dA0PBfQuqjajbVAWSERD8XlvcDRdNwYdOUAm4eEnjJnBEzZy
+	v93Jq6iHUqJVWaGXcuFl5qdVu4JU41+01xDxopJAgvEY1SZxZOIdzURry4UZsOlXrXM
+	gwJ5aoLA6MsKTAJGOavkiV7J7qArhvShyqEIU8go=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1719589642;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=cYJkCrmdXsxK1RjHqRYq2dkKiML8wG1A4sby2kzEf1A=;
+	b=XDyUywwP9Y42CIRSizdzZ2dhx/60HWCe56t0wbbvF+BES5b7TSJlXNcOJXhIZWzF
+	8+6EZHhovIe70L5Hw3X6PyVRpkQw63X6jl/WT2V7YXGxL1UYFG9fFLSJhVvzECnxr5U
+	OcCHbU0EUcu92xkzd1HL9wT6LFqlnNP20+ya4sRY=
+Date: Fri, 28 Jun 2024 15:47:22 +0000
+From: Swiggy <noreply@swiggy.in>
+Reply-To: Swiggy <noreply@swiggy.in>
+To: akhilthedevz@gmail.com
+Message-ID: <010001905f879fac-d4b62978-2846-4bcb-97b4-7ac5caa14812-000000@email.amazonses.com>
+Subject: Your Swiggy order was delivered on time
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_4729020_283974267.1719589642000"
+Feedback-ID: ::1.us-east-1.qho6pmmdgfoU+2vo/oRhFX1p3aweL1dkZgD3aFb0B40=:AmazonSES
+X-SES-Outgoing: 2024.06.28-54.240.10.27
+
+------=_Part_4729020_283974267.1719589642000
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_4729021_1052453297.1719589642000"
+
+------=_Part_4729021_1052453297.1719589642000
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<!-- BODY -->
+<table class=3D"body-wrap" width=3D"100%" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"margin: 0;padding: 0;width: 100%; font-family: 'Helvetica Neue'=
+, 'Helvetica', Helvetica, Arial, sans-serif;">
+    <tr style=3D"margin: 0;padding: 0;">
+        <td style=3D"margin: 0;padding: 0;"></td>
+        <td class=3D"container" bgcolor=3D"#F6F6F6" style=3D"margin: 0 auto=
+!important;padding: 0;background: #f6f6f6;display: block!important;max-widt=
+h: 800px!important;clear: both!important;">
+            <br style=3D"margin: 0;padding: 0;">
+            <div class=3D"content" style=3D"margin: 0 auto 15px;padding: 0;=
+max-width: 600px;border-radius: 3px;display: block;background: #fff;">
+                <div class=3D"mailer-header" style=3D"margin: 0;padding: 0 =
+0px;">
+                    <!-- HEADER -->
+                   =20
+                    <table class=3D"head-wrap" cellspacing=3D"0" cellpaddin=
+g=3D"0" style=3D"margin: 0;padding: 0;width: 100%;">
+                        <tr style=3D"margin: 0;padding: 0;">
+                            <td style=3D"margin: 0;padding: 0;"></td>
+                            <td class=3D"header container" bgcolor=3D"#fff"=
+ style=3D"margin: 0 auto!important;padding: 15px 0;background: #fff;border-=
+bottom: 1px solid #e9e9e9;display: block!important;max-width: 800px!importa=
+nt;clear: both!important;">
+                                <table width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0" style=3D"margin: 0;padding: 0;">
+                                    <tr style=3D"margin: 0;padding: 0;">
+                                        <td valign=3D"top" align=3D"center"=
+ width=3D"100" style=3D"margin: 0;padding: 0;">
+                                            <img alt=3D"Swiggy" style=3D"wi=
+dth: 120px;margin: 10px 0;padding: 0;max-width: 100%;" src=3D"https://media=
+-assets.swiggy.com/swiggy/image/upload/f_auto,fl_lossy,q_auto/v1447855171/S=
+wiggy-logo_yc2umc">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style=3D"margin: 0;padding: 0;"></td>
+                        </tr>
+                    </table>
+                    <!-- /HEADER -->
+                </div>
+                <div class=3D"mailer-content" style=3D"margin: 0;padding: 0=
+ 15px;">
+                    <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"margin: 0;padding: 0;">
+                        <tr style=3D"margin: 0;padding: 0;">
+                            <td style=3D"margin: 0;padding: 0;">
+                                <br style=3D"margin: 0;padding: 0;">
+                               =20
+                                <p style=3D"margin: 0;padding: 0;margin-bot=
+tom: 5px;color: #585858;font-weight: 400;font-size: 13px;line-height: 1.6;"=
+>Greetings from Swiggy</p>
+                                <p style=3D"margin: 0;padding: 0;margin-bot=
+tom: 5px;color: #585858;font-weight: 400;font-size: 13px;line-height: 1.6;"=
+><span>Your order was delivered in 83 minutes! Rate this timely delivery </=
+span><a href=3D"https://swiggy.onelink.me/eraU?pid=3DEMAIL&amp;c=3Dspeed_re=
+liability&amp;af_dp=3Dswiggy%3A%2F%2Frating%3Forder_id%3D164976611579%26rat=
+ing_type%3Ddelivery%26rating_source%3Demail&amp;af_force_deeplink=3Dtrue&am=
+p;is_retargeting=3Dtrue&amp;af_web_dp=3Dhttps://www.swiggy.com/rate/1649766=
+11579?type=3Ddelivery&amp;rating=3D0&amp;rateAll=3Dtrue&amp;rating_source=
+=3Demail" alt=3D"">here</a></p>
+                               =20
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br style=3D"margin: 0;padding: 0;">
+                <div class=3D"order-id" style=3D"margin: 0;padding: 0 15px;=
+">
+                    <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"margin: 0;padding: 0;">
+                        <tr style=3D"margin: 0;padding: 0;">
+                            <td width=3D"25%" style=3D"margin: 0;padding: 0=
+;margin-bottom: 15px;font-weight: bold;font-size: 12px;min-width: 100px;max=
+-width: 100%;display: inline-block;vertical-align:top;">
+                                <p style=3D"margin: 0;padding: 0;margin-bot=
+tom: 5px;color: #1a1a1a;font-weight: bold;font-size: 14px;line-height: 1.6;=
+">Order No:</p>
+                                <h5 style=3D"margin: 0;padding: 0;line-heig=
+ht: 1.1;margin-bottom: 5px;color: #1a1a1a;font-weight: 900;font-size: 14px;=
+">164976611579</h5>
+                            </td>
+                            <td width=3D"60%" style=3D"margin: 0;padding: 0=
+;margin-bottom: 15px;font-weight: bold;font-size: 12px;min-width: 100px;max=
+-width: 100%;display: inline-block; vertical-align:top;">
+                               =20
+                                <p style=3D"margin: 0;padding: 0;margin-bot=
+tom: 5px;color: #1a1a1a;font-weight: bold;font-size: 14px;line-height: 1.6;=
+">Restaurant</p>
+                                <h5 style=3D"margin: 0;padding: 0;line-heig=
+ht: 1.1;margin-bottom: 5px;color: #1a1a1a;font-weight: 900;font-size: 14px;=
+">Sabka Restaurant</h5>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br style=3D"margin: 0;padding: 0;">
+                <!-- Footer -->
+                <div class=3D"order-summary" style=3D"margin: 0 auto 15px;p=
+adding: 0;max-width: 600px;border-radius: 3px;display: block;background: #f=
+ff;">
+                    <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"margin: 0;padding: 0;">
+                        <tr style=3D"margin: 0;padding: 0;">
+                            <td style=3D"margin: 0;padding: 0;"></td>
+                            <td class=3D"container" style=3D"margin: 0 auto=
+!important;padding: 0;display: block!important;max-width: 1000px!important;=
+clear: both!important;">
+                                <br style=3D"margin: 0;padding: 0;">
+                                <div class=3D"content" style=3D"margin: 0 a=
+uto;padding: 0;max-width: 1000px;border-radius: 3px;display: block;backgrou=
+nd: #fff;">
+                                    <div style=3D"position: relative; min-h=
+eight: calc(29.7cm - 140px); padding-bottom: 100px; ">
+                                        <div class=3D"mailer-content" style=
+=3D"margin: 0;padding: 0 15px;">
+                                            <table width=3D"100%" cellspaci=
+ng=3D"0" cellpadding=3D"0" style=3D"margin: 0;padding: 0;">
+                                                <tr style=3D"margin: 0;padd=
+ing: 0;">
+                                                    <td style=3D"margin: 0;=
+padding: 0;">
+                                                        <p style=3D"margin:=
+ 0;padding: 0;margin-bottom: 5px;color: #1a1a1a;font-weight: 400;font-size:=
+ 13px;line-height: 1.6;">Your Order Summary:</p>
+                                                        <!-- /hero -->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <br style=3D"margin: 0;padding: 0;"=
+>
+                                        <div class=3D"order-id" style=3D"ma=
+rgin: 0;padding: 0 12px;">
+                                            <table width=3D"75%" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D"margin: 0;padding: 0;">
+                                                <tr style=3D"margin: 0;padd=
+ing: 0;">
+                                                    <td width=3D"100%" styl=
+e=3D"margin: 0;padding: 0;font-size: 13px;min-width: 100px;max-width: 100%;=
+display: inline-block;vertical-align:top;">
+                                                        <p style=3D"margin:=
+ 0;padding: 0;color: #1a1a1a;font-size: 13px;line-height: 1.6;">Order No: <=
+strong>164976611579</strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width=3D"100%" styl=
+e=3D"margin: 0;padding: 0;font-size: 13px;min-width: 100px;max-width: 100%;=
+display: inline-block;vertical-align:top;">
+                                                        <p style=3D"margin:=
+ 10px 0 0;padding: 0;color: #1a1a1a;font-size: 13px;">Order placed at: <str=
+ong>Friday, June 28, 2024 7:20 PM</strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width=3D"100%" styl=
+e=3D"margin: 0;padding: 0;font-size: 13px;min-width: 100px;max-width: 100%;=
+display: inline-block;vertical-align:top;">
+                                                       =20
+                                                        <p style=3D"margin:=
+ 10px 0 0;padding: 0; color: #1a1a1a;font-size: 13px;line-height: 1.2;">Ord=
+er delivered at: <strong>Friday, June 28, 2024 8:43 PM</strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width=3D"100%" styl=
+e=3D"margin: 0;padding: 0; font-size: 13px;min-width: 100px;max-width: 100%=
+;display: inline-block;vertical-align:top;">
+                                                       =20
+                                                        <p style=3D"margin:=
+ 10px 0 0;padding: 0; color: #1a1a1a;font-size: 13px;line-height: 1.2;">Ord=
+er Status: <strong>Delivered</strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width=3D"100%" styl=
+e=3D"margin-top: 25px;padding: 0;margin-bottom: 12px;font-size: 13px;min-wi=
+dth: 100px;max-width: 100%;display: inline-block; vertical-align:top;">
+                                                        <p style=3D"margin:=
+ 0;padding: 0;margin-bottom: 5px;color: #1a1a1a;font-size: 13px;line-height=
+: 1.6;">Ordered from:</p>
+                                                        <h5 style=3D"margin=
+: 0;padding: 0;line-height: 1.5;margin-bottom: 5px;color: #1a1a1a;font-weig=
+ht: 400;font-size: 13px;"><strong>Sabka Restaurant</strong> </h5>
+                                                        <p class=3D"" style=
+=3D"margin: 0;padding: 0;margin-bottom: 0px;color: #585858;font-weight: nor=
+mal;font-size: 13px;line-height: 1.6;">SABCA RESTAURANT,RING ROAD,TIRUR,TIR=
+UR CIRCLE,MALAPPURAM(KERALA)676101</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p style=3D"margin:=
+ 0;padding: 0; color: #1a1a1a;font-size: 13px;">Delivery To:</p>
+                                                        <p style=3D"font-we=
+ight: bold;font-size: 13px;">Akhil K</p>
+                                                        <h5 style=3D"margin=
+: 0;padding: 0;line-height: 1.6;margin-bottom: 5px;color: #585858;font-weig=
+ht: normal;font-size: 13px; width: 300px;">Kizhuvath (H)</h5>
+                                                        <h5 style=3D"margin=
+: 0;padding: 0;line-height: 1.6;margin-bottom: 5px;color: #585858;font-weig=
+ht: normal;font-size: 13px; width: 300px;">Tanur, Kerala 676302, India</h5>
+                                                        <h5 style=3D"margin=
+: 0;padding: 0;line-height: 1.6;margin-bottom: 5px;color: #585858;font-weig=
+ht: normal;font-size: 13px; width: 300px;">Tanur</h5>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <br style=3D"margin: 0;padding: 0;"=
+>
+                                        <div class=3D"order-content" style=
+=3D"margin: 0;padding: 0 15px;">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="margin:0;padding:0">
+                                                <thead style="margin:0;padding:0;text-align:left;background:#e9e9e9;border-collapse:collapse;border-spacing:0;border-color:#ccc">
+                                                <tr style="margin:0;padding:0">
+                                                    <th style="margin:0;padding:10px 15px;font-size:13px">Item Name</th>
+                                                    <th style="margin:0;padding:10px 15px;font-size:13px;text-align:right;padding-right:180px">Quantity</th>
+                                                    <th align="right" style="margin:0;padding:10px 15px;font-size:13px">Price</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody style="margin:0;padding:0">
+                                                <tr><td><span>
+                                                    </span></td></tr><tr style="margin:0;padding:0">
+                                                        <td style="vertical-align:top;margin:0;padding:10px;font-weight:normal;font-size:13px">Mixed Fried Rice
+</td>
+                                                        <td style="margin:0;text-align:right;padding:10px;font-weight:normal;font-size:13px;padding-right:200px">2</td>
+                                                        
+                                                        <td align="right" style="margin:0;padding:10px;font-weight:normal;font-size:13px;padding-right:15px">₹&nbsp;650 </td>
+                                                    </tr>
+                                                    
+                                                    <tr width="100%">
+                                                        <td>
+                                                            <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                        </td>
+                                                    </tr>
+                                                <tr><td><span>
+                                                    </span></td></tr><tr style="margin:0;padding:0">
+                                                        <td style="vertical-align:top;margin:0;padding:10px;font-weight:normal;font-size:13px">Beef Kondattom</td>
+                                                        <td style="margin:0;text-align:right;padding:10px;font-weight:normal;font-size:13px;padding-right:200px">1</td>
+                                                        
+                                                        <td align="right" style="margin:0;padding:10px;font-weight:normal;font-size:13px;padding-right:15px">₹&nbsp;240 </td>
+                                                    </tr>
+                                                    
+                                                    <tr width="100%">
+                                                        <td>
+                                                            <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                        </td>
+                                                    </tr>
+                                                <tr><td><span>
+                                                    </span></td></tr><tr style="margin:0;padding:0">
+                                                        <td style="vertical-align:top;margin:0;padding:10px;font-weight:normal;font-size:13px">Chicken Chilly [Full]</td>
+                                                        <td style="margin:0;text-align:right;padding:10px;font-weight:normal;font-size:13px;padding-right:200px">1</td>
+                                                        
+                                                        <td align="right" style="margin:0;padding:10px;font-weight:normal;font-size:13px;padding-right:15px">₹&nbsp;625 </td>
+                                                    </tr>
+                                                    
+                                                    <tr width="100%">
+                                                        <td>
+                                                            <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                        </td>
+                                                        <td>
+                                                            <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                        </td>
+                                                    </tr>
+                                                
+                                                <tr><td><span>
+                                                    
+                                                    
+                                                    
+                                                    <span>
+                                                        <span>
+                                                           </span></span></span></td></tr><tr style="margin:0;padding:0">
+                                                               <td width="80%" scope="row" colspan="2" style="margin:0;padding:10px 0;text-align:right;font-weight:normal;border:0;font-size:13px">Item Total:</td>
+                                                               
+                                                               <td width="20%" style="margin:0;padding:5px 0;font-weight:normal;border-bottom:0px solid #e9e9e9;font-size:13px;text-align:right;border:0;padding-right:15px"> ₹&nbsp;1515.00</td>
+                                                           </tr>
+                                                        
+                                                    
+                                                <tr><td><span>
+                                                    
+                                                    
+                                                    
+                                                    <span>
+                                                        <span>
+                                                           </span></span></span></td></tr><tr style="margin:0;padding:0">
+                                                               <td width="80%" scope="row" colspan="2" style="margin:0;padding:10px 0;text-align:right;font-weight:normal;border:0;font-size:13px">Delivery partner fee:</td>
+                                                               
+                                                               <td width="20%" style="margin:0;padding:5px 0;font-weight:normal;border-bottom:0px solid #e9e9e9;font-size:13px;text-align:right;border:0;padding-right:15px"> ₹&nbsp;88.00</td>
+                                                           </tr>
+                                                        
+                                                    
+                                                <tr><td><span>
+                                                    
+                                                    
+                                                    
+                                                    <span>
+                                                        <span>
+                                                           </span></span></span></td></tr><tr style="margin:0;padding:0">
+                                                               <td width="80%" scope="row" colspan="2" style="margin:0;padding:10px 0;text-align:right;font-weight:normal;border:0;font-size:13px">Platform Fee</td>
+                                                               <td width="20%" style="margin:0;padding:5px 0;font-weight:normal;border-bottom:0px solid #e9e9e9;font-size:13px;text-align:right;border:0;padding-right:15px"> ₹&nbsp;5.00</td>
+                                                               
+                                                           </tr>
+                                                        
+                                                    
+                                                <tr><td><span>
+                                                    
+                                                    
+                                                    
+                                                    <span>
+                                                        <span>
+                                                           </span></span></span></td></tr><tr style="margin:0;padding:0">
+                                                               <td width="80%" scope="row" colspan="2" style="margin:0;padding:10px 0;text-align:right;font-weight:normal;border:0;font-size:13px">Taxes:</td>
+                                                               
+                                                               <td width="20%" style="margin:0;padding:5px 0;font-weight:normal;border-bottom:0px solid #e9e9e9;font-size:13px;text-align:right;border:0;padding-right:15px"> ₹&nbsp;129.50</td>
+                                                           </tr>
+                                                        
+                                                    
+                                                <tr><td><span>
+                                                    
+                                                    
+                                                    <span>
+                                                          </span></span></td></tr><tr width="100%">
+                                                              <td>
+                                                                  <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                              </td>
+                                                              <td>
+                                                                  <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                              </td>
+                                                              <td>
+                                                                  <div style="min-height:1px;width:100%;background:#e9e9e9;clear:both"></div>
+                                                              </td>
+                                                          </tr>
+                                                    
+                                                    
+                                                <tr><td><span>
+                                                    
+                                                    
+                                                    
+                                                    <span>
+                                                        <span>
+                                                           </span></span></span></td></tr><tr style="margin:0;padding:0">
+                                                               <td width="80%" scope="row" colspan="2" style="margin:0;padding:10px 0;text-align:right;font-weight:normal;border:0;font-size:13px">Paid Via Cred:</td>
+                                                               
+                                                               <td width="20%" style="margin:0;padding:5px 0;font-weight:normal;border-bottom:0px solid #e9e9e9;font-size:13px;text-align:right;border:0;padding-right:15px"> ₹&nbsp;1737.00</td>
+                                                           </tr>
+                                                        
+                                                    
+                                                
+                                                <tr width="100%">
+                                                    <td>
+                                                        <div style="width:100%;clear:both"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div style="min-height:15px;width:100%;clear:both"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div style="min-height:15px;width:100%;clear:both"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="margin:0;padding:0;color:#79b33b;background:#f9f9f9">
+                                                    <th width="80%" scope="row" colspan="2" style="margin:0;padding:10px 0;text-align:right;font-weight:bold;border:0;font-size:13px">Order Total:</th>
+                                                    <td width="20%" style="margin:0;padding:10px 0;font-weight:bold;border-bottom:1px solid #e9e9e9;font-size:13px;text-align:right;border:0;padding-right:15px"> ₹&nbsp;1737</td>
+                                                </tr>
+                                                <tr><td><span>
+                                                    
+                                                </span>
+                                                
+                                                </td></tr></tbody>
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <p style=3D"color: #585858; fon=
+t-size: 13px; border-top: 1px solid #ccc; padding: 15px 40px;">The link to =
+rate your delivery experience is only valid for mobile devices.</p>
+                                        </div>
+                                        <div style=3D"position: absolute; b=
+ottom: 0; left: 0; margin: 0 -30px;">
+                                            <p style=3D'color: #585858; fon=
+t-size: 13px; border-top: 1px solid #ccc; padding: 15px 40px; '> <b>Disclai=
+mer</b>: Attached is the invoice for the restaurant services provided by th=
+e outlet. For items not covered in the attached invoice, the outlet shall b=
+e responsible to issue an invoice directly to you. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style=3D"margin: 0;padding: 0;"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class=3D"primary-footer" style=3D"margin: 0;padding: 0=
+;">
+                    <!-- Addresses & Landmark -->
+                    <table class=3D"social" width=3D"100%" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"padding: 0 15px;border-top: 1px solid #e9e9e9;=
+border-bottom: 1px solid #e9e9e9;margin: 0;">
+                        <tr style=3D"margin: 0;padding: 0;">
+                            <td style=3D"margin: 0;padding: 0;">
+                                <!--- column 1 -->
+                                <table align=3D"left" class=3D"column" cell=
+spacing=3D"0" cellpadding=3D"0" style=3D"margin: 0;padding: 15px 0;max-widt=
+h: 112px;">
+                                    <tr style=3D"margin: 0;padding: 0;">
+                                        <td style=3D"margin: 0;padding: 0;"=
+>
+                                            <table class=3D"app-links" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-family: Arial,He=
+lvetica,sans-serif;font-size: 11px;margin: 0;padding: 0;">
+                                                <tbody style=3D"margin: 0;p=
+adding: 0;">
+                                                <tr style=3D"margin: 0;padd=
+ing: 0;">
+                                                    <td style=3D"margin: 0;=
+padding: 0;">Get the App:&nbsp;&nbsp;</td>
+                                                    <td class=3D"icon" styl=
+e=3D"margin: 0;padding: 0;padding-right: 5px;">
+                                                        <a href=3D"http://s=
+wiggy.com/app?utm_source=3Dswiggy&utm_medium=3Dcustomerorder" target=3D"_bl=
+ank" style=3D"margin: 0;padding: 0;color: #2BA6CB;display: block;">
+                                                            <img style=3D"h=
+eight: 15px;width: auto;margin: 0;padding: 0;max-width: 100%;max-height: 15=
+px!important;" src=3D"https://media-assets.swiggy.com/swiggy/image/upload/f=
+_auto,fl_lossy,q_auto/v1447855172/Android_qt1acy">
+                                                        </a>
+                                                    </td>
+                                                    <td class=3D"icon" styl=
+e=3D"margin: 0;padding: 0;padding-right: 5px;">
+                                                        <a href=3D"http://s=
+wiggy.com/app?utm_source=3Dswiggy&utm_medium=3Dcustomerorder" target=3D"_bl=
+ank" style=3D"margin: 0;padding: 0;color: #2BA6CB;display: block;">
+                                                            <img style=3D"h=
+eight: 15px;width: auto;margin: 0;padding: 0;max-width: 100%;max-height: 15=
+px!important;" src=3D"https://media-assets.swiggy.com/swiggy/image/upload/f=
+_auto,fl_lossy,q_auto/v1447855170/Apple_e7lnfc"></a>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- /column 1 -->
+                                <!-- /column 2 -->
+                                <!-- /FOOTER -->
+                                <table align=3D"right" class=3D"column" cel=
+lspacing=3D"0" cellpadding=3D"0" style=3D"margin: 0;padding: 15px 0;max-wid=
+th: 142px;">
+                                    <tr style=3D"margin: 0;padding: 0;">
+                                        <td style=3D"margin: 0;padding: 0;"=
+>
+                                            <table class=3D"social-links" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-family: Arial=
+,Helvetica,sans-serif;font-size: 11px;margin: 0;padding: 0;">
+                                                <tbody style=3D"margin: 0;p=
+adding: 0;">
+                                                <tr style=3D"margin: 0;padd=
+ing: 0;">
+                                                    <td style=3D"margin: 0;=
+padding: 0;text-align: left;">Follow us:&nbsp;&nbsp;</td>
+                                                    <td class=3D"icon" styl=
+e=3D"margin: 0;padding: 0;padding-right: 5px;">
+                                                        <a target=3D"_blank=
+" href=3D"https://www.facebook.com/swiggy.in" style=3D"margin: 0;padding: 0=
+;color: #2BA6CB;display: block;">
+                                                            <img style=3D"h=
+eight: 15px;width: auto;margin: 0;padding: 0;max-width: 100%;max-height: 15=
+px!important;" src=3D"https://media-assets.swiggy.com/swiggy/image/upload/f=
+_auto,fl_lossy,q_auto/v1448875320/Facebook_dznper" alt=3D"Swiggy Facebook" =
+border=3D"0"></a>
+                                                    </td>
+                                                    <td class=3D"icon" styl=
+e=3D"margin: 0;padding: 0;padding-right: 5px;">
+                                                        <a target=3D"_blank=
+" href=3D" https://twitter.com/swiggy" style=3D"margin: 0;padding: 0;color:=
+ #2BA6CB;display: block;">
+                                                            <img style=3D"h=
+eight: 15px;width: auto;margin: 0;padding: 0;max-width: 100%;max-height: 15=
+px!important;" src=3D"https://media-assets.swiggy.com/swiggy/image/upload/f=
+_auto,fl_lossy,q_auto/v1448871246/Twitter_stmvbr_q1eh0w" alt=3D"Swiggy Twit=
+ter" border=3D"0"></a>
+                                                    </td>
+                                                    <td class=3D"icon" styl=
+e=3D"margin: 0;padding: 0;padding-right: 5px;">
+                                                        <a et=3D"_blank" hr=
+ef=3D"https://www.pinterest.com/swiggyindia/" target=3D"_blank" style=3D"ma=
+rgin: 0;padding: 0;color: #2BA6CB;display: block;">
+                                                            <img style=3D"h=
+eight: 15px;width: auto;margin: 0;padding: 0;max-width: 100%;max-height: 15=
+px!important;" src=3D"https://media-assets.swiggy.com/swiggy/image/upload/f=
+_auto,fl_lossy,q_auto/v1447855171/Pinterest_dd2nv9" alt=3D"Swiggy pinterest=
+" border=3D"0"></a>
+                                                    </td>
+                                                    <td class=3D"icon" styl=
+e=3D"margin: 0;padding: 0;padding-right: 5px;">
+                                                        <a et=3D"_blank" hr=
+ef=3D"https://instagram.com/swiggyindia/" target=3D"_blank" style=3D"margin=
+: 0;padding: 0;color: #2BA6CB;display: block;">
+                                                            <img style=3D"h=
+eight: 15px;width: auto;margin: 0;padding: 0;max-width: 100%;max-height: 15=
+px!important;" src=3D"https://media-assets.swiggy.com/swiggy/image/upload/f=
+_auto,fl_lossy,q_auto/v1447855170/Instagram_okx3pg" alt=3D"Swiggy instagram=
+" border=3D"0"></a>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- /column 2 -->
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- content -->
+                <div class=3D"secondary-footer" style=3D"margin: 0;padding:=
+ 0 15px;background: #fbfbfb;">
+                    <br style=3D"margin: 0;padding: 0;">
+                    <table width=3D"100%" class=3D"column" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"margin: 0;padding: 0;">
+                        <tr style=3D"margin: 0;padding: 0;">
+                            <td style=3D"margin: 0;padding: 0;">
+                                <table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" style=3D"font-family: Arial,Helvetica,sans-seri=
+f;font-size: 11px;color: #9b9b9b;margin: 0;padding: 0;">
+                                    <tbody style=3D"margin: 0;padding: 0;">
+                                    <tr style=3D"margin: 0;padding: 0;">
+                                        <td align=3D"center" style=3D"margi=
+n: 0;padding: 0;">=C2=A92024-Swiggy. All rights reserved.</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" align=3D"center" style=3D"font-family: Arial,Helvetica,sans=
+-serif;font-size: 10px;padding: 10px 0;color: #9b9b9b;margin: 0;">
+                        <tbody style=3D"margin: 0;padding: 0;">
+                        <tr style=3D"margin: 0;padding: 0;">
+                            <td align=3D"center" width=3D"33.3333%" style=
+=3D"margin: 0;padding: 0;">
+                                Swiggy,Tower D, 9th Floor, IBC Knowledge Pa=
+rk, Bannerghatta Road, Bangalore &#45; 560029
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br style=3D"margin: 0;padding: 0;">
+                </div>
+            </div>
+            <!-- /content -->
+        </td>
+        <td style=3D"margin: 0;padding: 0;"></td>
+    </tr>
+</table>
+</html>
